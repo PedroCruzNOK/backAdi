@@ -11,6 +11,11 @@ const config: Options ={
     entities: ['dist/**/*.entity.js'],
     entitiesTs:  ['src/**/*.entity.ts'],
     metadataProvider:TsMorphMetadataProvider,
+    migrations: {
+        path:'./src/migrations',
+        pattern: /^[\w-]+\d+\.ts$/,
+    }
+
 };
 
 export default config;
