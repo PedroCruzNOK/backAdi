@@ -1,4 +1,6 @@
-import {  Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import {  Cascade, Collection, Entity, OneToMany, PrimaryKey, Property } from '@mikro-orm/core';
+import { Inventario } from '../inventario/inventario.entity';
+
 
 
 @Entity()
@@ -15,6 +17,9 @@ export class Grupo{
 
     @Property()
     habilitado?: string;
+
+    @OneToMany(() => Inventario, b => b.grupo, { cascade: [Cascade.ALL] })
+    inventarios = new Collection<Inventario>(this);
 
     @Property()
     createdAt = new Date();

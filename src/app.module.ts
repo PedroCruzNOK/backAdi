@@ -7,6 +7,8 @@ import { ProductoModule } from './producto/producto.module';
 import { EstadoModule } from './estado/estado.module';
 import { TipoModule } from './tipo/tipo.module';
 import { GrupoModule } from './grupo/grupo.module';
+import { InventarioModule } from './inventario/inventario.module';
+import { BundlesModule } from './bundles/bundles.module';
 
 @Module({
   imports: [
@@ -18,6 +20,8 @@ import { GrupoModule } from './grupo/grupo.module';
     EstadoModule,
     TipoModule,
     GrupoModule,
+    InventarioModule,
+    BundlesModule,
 
   ],
   controllers: [AppController],

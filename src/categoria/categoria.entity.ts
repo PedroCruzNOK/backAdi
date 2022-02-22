@@ -7,10 +7,10 @@ export class Categoria{
     @PrimaryKey({  type: 'uuid', defaultRaw: 'uuid_generate_v4()' })
     uuid! : string;
 
-    @Property()
+    @Property({ concurrencyCheck: true })
     nombre?: string;
 
-    @Property()
+    @Property({ concurrencyCheck: true })
     descripcion?: string;
 
     @Property()

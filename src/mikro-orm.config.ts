@@ -13,7 +13,7 @@ const config: Options ={
     metadataProvider:TsMorphMetadataProvider,
     migrations: {
         path:'./src/migrations',
-        pattern: /^[\w-]+\d+\.ts$/,
+        glob: "!(*.d).{js,ts}",
     }
 
 };

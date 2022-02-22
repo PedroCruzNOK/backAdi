@@ -1,4 +1,5 @@
-import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
+import { Entity, ManyToOne, PrimaryKey, Property, OneToMany, Collection, Cascade} from '@mikro-orm/core';
+import { Inventario } from '../inventario/inventario.entity';
 import { Categoria } from '../categoria/categoria.entity';
 
 @Entity()
@@ -18,6 +19,9 @@ export class Producto{
 
     @ManyToOne(() => Categoria)
     categoria: Categoria;
+
+    @OneToMany(() => Inventario, b => b.producto, { cascade: [Cascade.ALL] })
+    inventarios = new Collection<Inventario>(this);
 
     @Property()
     createdAt = new Date();
